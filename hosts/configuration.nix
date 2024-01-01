@@ -40,7 +40,7 @@ in
     isNormalUser = true;
     initialPassword = "pw123";
     extraGroups = [ "wheel" "networkmanager" ];
-    openssh.authorizedKeys = [ "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIPuMwyrAq9CWA7XpUmQu1DZVm0iFgNYFOKlDAsUEqADhAAAABHNzaDo= john@XPS15" ];
+    openssh.authorizedKeys = [ "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIPuMwyrAq9CWA7XpUmQu1DZVm0iFgNYFOKlDAsUEqADhAAAABHNzaDo=" ];
   };
 
   time.timeZone = "Europe/London";        # Time zone and Internationalisation
