@@ -29,7 +29,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/AECA-581D";
+    { device = "/dev/disk/by-label/ESP";
       fsType = "vfat";
     };
 
