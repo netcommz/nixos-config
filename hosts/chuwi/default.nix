@@ -40,6 +40,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  networking.hostName = "chuwi";
   networking.hostId = "a7830edb";
 
   hardware = {
