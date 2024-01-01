@@ -40,7 +40,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  networking.hostId = "a7830edb"
+  networking.hostId = "a7830edb";
 
   hardware = {
   #   opengl = {                                  # Hardware Accelerated Video
