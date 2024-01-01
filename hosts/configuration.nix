@@ -36,8 +36,9 @@ in
               import ../modules/shell ++
               import ../modules/theming );
 
-  users.users.${vars.user} = {              # System User
+  users.users.${vars.user} = {
     isNormalUser = true;
+    initialPassword = "pw123";
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
@@ -55,9 +56,9 @@ in
   };
 
   security = {
-    rtkit.enable = true;
-    polkit.enable = true;
-    sudo.wheelNeedsPassword = false;
+    # rtkit.enable = true;
+    # polkit.enable = true;
+    # sudo.wheelNeedsPassword = false;
   };
 
   fonts.packages = with pkgs; [                # Fonts

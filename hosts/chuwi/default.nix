@@ -22,9 +22,10 @@
   imports = [
               ./hardware-configuration.nix
               # ../../modules/programs/games.nix
-            ] ++
-            ( import ../../modules/hardware/beelink) ++
-            ( import ../../modules/desktops/virtualisation);
+            #] ++
+            ];
+            # ( import ../../modules/hardware/beelink) ++
+            #( import ../../modules/desktops/virtualisation);
 
   boot = {                                      # Boot Options
     loader = {
