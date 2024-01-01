@@ -34,7 +34,7 @@ in
       host = {
         hostName = "chuwi";
         # mainMonitor = "HDMI-A-2";
-        i# secondMonitor = "HDMI-A-1";
+        # secondMonitor = "HDMI-A-1";
       };
     };
     modules = [                                             # Modules Used
@@ -56,8 +56,8 @@ in
       inherit inputs unstable vars;
       host = {
         hostName = "laptop";
-        mainMonitor = "eDP-1";
-        secondMonitor = "";
+        # mainMonitor = "eDP-1";
+        # secondMonitor = "";
       };
     };
     modules = [
