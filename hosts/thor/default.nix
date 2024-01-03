@@ -21,7 +21,6 @@
 {
   imports = [
               ./hardware-configuration.nix
-              # ../../modules/programs/games.nix
             #] ++
             ];
             # ( import ../../modules/hardware/beelink) ++
@@ -29,20 +28,18 @@
 
   boot = {                                      # Boot Options
     loader = {
-      systemd-boot = {
+      grub = {
         enable = true;
         configurationLimit = 3;
-      };
-      efi = {
-        canTouchEfiVariables = true;
+        device = "/dev/sdb";
       };
       timeout = 5;
     };
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  networking.hostName = "chuwi";
-  networking.hostId = "a7830edb";
+  networking.hostName = "thor";
+  networking.hostId = "a4ad9012";
 
   hardware = {
   #   opengl = {                                  # Hardware Accelerated Video
