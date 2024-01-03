@@ -14,27 +14,47 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "zroot/nixos";
-      fsType = "zfs";
+    { device = "/dev/sda4";
+      fsType = "btrfs";
+      options = [ "compress-force=zstd:1" "noatime" "commit=120" "autodefrag" "subvol=nixos" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/sda4";
+      fsType = "btrfs";
+      options = [ "compress-force=zstd:1" "noatime" "commit=120" "autodefrag" "subvol=home" ];
     };
 
   fileSystems."/nix" =
-    { device = "zroot/nixos/store";
-      fsType = "zfs";
+    { device = "/dev/sda4";
+      fsType = "btrfs";
+      options = [ "compress-force=zstd:1" "noatime" "commit=120" "autodefrag" "subvol=nix" ];
+    };
+
+  fileSystems."/var/lib/docker" =
+    { device = "/dev/sda4";
+      fsType = "btrfs";
+      options = [ "compress-force=zstd:1" "noatime" "commit=120" "autodefrag" "subvol=docker" ];
+    };
+
+  fileSystems."/var/lib/libvirt/images" =
+    { device = "/dev/sda4";
+      fsType = "btrfs";
+      options = [ "compress-force=zstd:1" "noatime" "commit=120" "autodefrag" "subvol=images" ];
     };
 
   fileSystems."/data" =
-    { device = "zdata/data";
-      fsType = "zfs";
+    { device = "/dev/sdb1";
+      fsType = "btrfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-label/ESP";
+    { device = "/dev/disk/by-uuid/C3F0-7A24";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/61371e42-6c5b-4033-8909-811d98993625"; }
+    [ { device = "/dev/disk/by-uuid/438b8347-67df-4c1e-97f2-4f2268f35907"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

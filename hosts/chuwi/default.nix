@@ -38,7 +38,7 @@
   };
 
   networking.hostName = "chuwi";
-  networking.hostId = "a7830edb";
+  networking.hostId = "73b4e854";
 
   hardware = {
   };
